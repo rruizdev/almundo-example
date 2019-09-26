@@ -6,7 +6,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const hotelsRouter = require('./routes/hotels');
 
 const app = express();
 
@@ -23,7 +23,7 @@ router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/hotels', hotelsRouter);
 
 expressSwagger({
     swaggerDefinition: {
