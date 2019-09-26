@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
+const data = fs.readFileSync(path.join(__dirname, '../data/data.json'));
+
 exports.get = function() {
-    var rawData = fs.readFileSync(path.join(__dirname, '../data/data.json'));
-    return JSON.parse(rawData);
+    return JSON.parse(data);
 }
