@@ -2,8 +2,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
-const router = require('express').Router();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
@@ -20,15 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const router = express.Router();
 router.use('/api-docs', swaggerUi.serve);
-
-var options = {
-    swaggerOptions: {
-        validatorUrl: null
-    }
-};
-
-router.get('/api-docs', swaggerUi.setup(swaggerDocument, options));
+router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
