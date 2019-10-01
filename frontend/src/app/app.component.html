@@ -1,10 +1,14 @@
 <header>
   <img src="../assets/images/logo-almundo.svg" />
 </header>
-<div class="container">  
+<div class="container-fluid">  
   <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-auto"></div>
+    <div class="col-md-4 col-lg-3">
+      <app-filter></app-filter>
+    </div>
+    <div class="col-md-8 col-lg-9">
+      <app-detail></app-detail>
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>
