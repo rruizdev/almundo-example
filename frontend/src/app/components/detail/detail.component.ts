@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelsService } from 'src/app/services/hotels.service';
 
 @Component({
   selector: 'app-detail',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.sass']
 })
 export class DetailComponent implements OnInit {
+  hotels = []
 
-  constructor() { }
+  constructor(private service: HotelsService) { }
 
   ngOnInit() {
+    this.service.hotels$.subscribe(response => this.hotels = response);
+    this.service.get();
   }
-
 }
