@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelsService } from 'src/app/services/hotels.service';
 import { Star } from 'src/app/models/star';
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-filter',
@@ -8,6 +9,9 @@ import { Star } from 'src/app/models/star';
   styleUrls: ['./filter.component.sass']
 })
 export class FilterComponent implements OnInit {
+  faCaretDown = faCaretDown;
+  faCaretUp = faCaretUp;
+
   allVisible: boolean = true;
   starsVisible: boolean = true;
   inputVisible: boolean = true;

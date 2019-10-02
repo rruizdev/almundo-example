@@ -1,10 +1,17 @@
 <form>
     <h4 (click)="showHideAll($event)">Filtros</h4>
+    <h5 (click)="showHideAll($event)" class="rwd">
+        <span>Filtrar</span>
+        <fa-icon [icon]="faCaretUp" *ngIf="allVisible"></fa-icon>
+        <fa-icon [icon]="faCaretDown" *ngIf="!allVisible"></fa-icon>
+    </h5>
     <div *ngIf="allVisible">
         <hr />
         <h5 (click)="showHideInput($event)">
             <img src="../../../assets/icons/filters/search.svg" />
             <span>Nombre de hotel</span>
+            <fa-icon [icon]="faCaretUp" *ngIf="inputVisible"></fa-icon>
+            <fa-icon [icon]="faCaretDown" *ngIf="!inputVisible"></fa-icon>
         </h5>
         <div class="form-group" *ngIf="inputVisible">
             <input type="text" class="form-control" id="hotel" [(ngModel)]="hotel" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el nombre del hotel" />
@@ -14,6 +21,8 @@
         <h5 (click)="showHideStars($event)">
             <img src="../../../assets/icons/filters/star.svg" />
             <span>Estrellas</span>
+            <fa-icon [icon]="faCaretUp" *ngIf="starsVisible"></fa-icon>
+            <fa-icon [icon]="faCaretDown" *ngIf="!starsVisible"></fa-icon>
         </h5>
         <div class="form-group last" *ngIf="starsVisible">
             <div class="form-check">
