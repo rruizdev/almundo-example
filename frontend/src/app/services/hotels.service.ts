@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HotelsService {
+  private myHotels: any[];
+
   private hotels = new BehaviorSubject<any[]>([]);
   public hotels$ = this.hotels.asObservable();
 
@@ -14,6 +16,17 @@ export class HotelsService {
   get() {
     this.hotels.next([]);
     this.http.get('http://localhost:3000/hotels')
-      .subscribe((response: any) => this.hotels.next(response));
+      .subscribe((response: any) => {
+        this.myHotels = response;
+        this.hotels.next(response);
+      });
+  }
+
+  filter(name: String, stars: any[]) {
+    if (name && name.length) {
+      this.hotels.next(this.myHotels.filter(hotel => hotel.name.match(name)));
+    } else {
+      this.hotels.next(this.myHotels);
+    }
   }
 }

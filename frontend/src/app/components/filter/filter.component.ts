@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelsService } from 'src/app/services/hotels.service';
 
 @Component({
   selector: 'app-filter',
@@ -12,7 +13,7 @@ export class FilterComponent implements OnInit {
 
   hotel: String;
 
-  constructor() { }
+  constructor(private service: HotelsService) { }
 
   ngOnInit() {
   }
@@ -31,5 +32,6 @@ export class FilterComponent implements OnInit {
 
   filterBy(event: any) {
     event.preventDefault();
+    this.service.filter(this.hotel, []);
   }
 }
