@@ -24,9 +24,9 @@ export class HotelsService {
 
   filter(name: string, stars: any[]) {
     if (name && name.length) {
-      this.hotels.next(this.myHotels.filter(hotel => hotel.name.match(name)));
+      this.hotels.next(this.myHotels.filter(hotel => hotel.name.match(name) && stars.find(star => star === hotel.stars)));
     } else {
-      this.hotels.next(this.myHotels);
+      this.hotels.next(this.myHotels.filter(hotel => stars.find(star => star === hotel.stars)));
     }
   }
 }

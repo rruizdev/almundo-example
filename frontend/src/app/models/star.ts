@@ -1,9 +1,18 @@
 export class Star {
+  all: boolean;
   five: boolean;
   four: boolean;
   three: boolean;
   two: boolean;
   one: boolean;
+
+  constructor() {
+    this.enableAll();
+  }
+
+  allChecked() {
+    return this.five && this.four && this.three && this.two && this.one;
+  }
     
   enableAll() {
     this.five = true;
@@ -11,10 +20,7 @@ export class Star {
     this.three = true;
     this.two = true;
     this.one = true;
-  }
-
-  constructor() {
-      this.disableAll();
+    this.all = true;
   }
 
   disableAll() {
@@ -23,9 +29,16 @@ export class Star {
     this.three = false;
     this.two = false;
     this.one = false;
+    this.all = false;
   }
 
-  allChecked() {
-    return this.five && this.four && this.three && this.two && this.one;
+  get() {
+    var result = [];
+    if (this.five) result.push(5);
+    if (this.four) result.push(4);
+    if (this.three) result.push(3);
+    if (this.two) result.push(2);
+    if (this.one) result.push(1);
+    return result;
   }
 }

@@ -32,7 +32,7 @@ export class FilterComponent implements OnInit {
     this.inputVisible = !this.inputVisible;
   }
 
-  allStars(event: any) {
+  toggleAllStars(event: any) {
     if (this.stars.allChecked() && event.target.checked) {
       this.stars.enableAll();
     } else if (this.stars.allChecked()) {
@@ -40,10 +40,11 @@ export class FilterComponent implements OnInit {
     } else {
       this.stars.enableAll();
     }
+    this.filterBy(undefined);
   }
 
   filterBy(event: any) {
-    event.preventDefault();
-    this.service.filter(this.hotel, []);
+    if (event) event.preventDefault();
+    this.service.filter(this.hotel, this.stars.get());
   }
 }
