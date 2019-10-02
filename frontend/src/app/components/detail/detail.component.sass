@@ -1,5 +1,71 @@
 @import '../../app.component.sass'
 
+$price: #df6800
+
 article
     box-shadow: $section-fade
     background-color: $section-bg
+    padding: 12px 0
+    margin-bottom: 12px
+    &:last-child
+        margin-bottom: 0
+    div
+        &.col-md-4, &.col-md-5
+            padding: 0 12px
+        &.col-md-4
+            img
+                width: 100%
+        &.col-md-5
+            h2
+                font-weight: bold
+                font-size: 16px
+                color: $section-stitle
+                margin-bottom: 3px
+            div
+                &.stars
+                    margin-bottom: 9px
+                    img
+                        width: 18px
+                        height: 18px
+                        margin-right: 4px
+                        filter: invert(0.6) sepia(4) saturate(8) hue-rotate(0)
+                        &:last-child
+                            margin-right: 0
+                &.amenities
+                    img
+                        width: 20px
+                        height: 20px
+                        margin-right: 6px
+                        filter: invert(0.1) sepia(0) saturate(0) hue-rotate(0)
+                        &:last-child
+                            margin-right: 0
+        &.col-md-3
+            background-image: linear-gradient(black 16%, rgba(255,255,255,0) 0%)
+            background-position: left
+            background-size: 1px 8px
+            background-repeat: repeat-y
+            text-align: center
+            p
+                text-align: center
+                &.message
+                    font-size: 12px
+                &.price
+                    span
+                        color: $price
+                        &.prefix
+                            padding: 4px 0
+                            font-size: 22px
+                            margin-right: 2px
+                            position: relative
+                            top: -3px
+                        &.amount
+                            font-size: 32px
+                            font-weight: bold
+            button
+                background-color: #002c77
+                color: #fff
+                font-size: 18px
+                padding: 0 32px
+                border-radius: 6px
+                font-weight: bold
+                height: 40px

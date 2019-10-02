@@ -1,15 +1,24 @@
 <section class="container-fluid">
-    <article class="row" *ngFor="let hotel of hotels">
+    <article class="row" *ngFor="let hotel of hotels" id="{{ hotel.id }}">
         <div class="col-md-4">
-            Foto
+            <img src="../../../assets/images/hotels/{{ hotel.image }}" />
         </div>
-        <div class="col-md-6">
-            Hotel Stefanos
-            Tres estrellas
-            Iconos
+        <div class="col-md-5">
+            <h2>{{ hotel.name }}</h2>
+            <div class="stars">
+                <img src="../../../assets/icons/filters/star.svg" *ngFor="let item of getStars(hotel)" />
+            </div>
+            <div class="amenities">
+                <img src="../../../assets/icons/amenities/{{ amenity }}.svg" *ngFor="let amenity of hotel.amenities" />
+            </div>
         </div>
-        <div class="col-md-2">
-            Sidebar
+        <div class="col-md-3">
+            <p class="message">Precio por noche por habitación</p>
+            <p class="price">
+                <span class="prefix">ARS</span>
+                <span class="amount">{{ hotel.price }}</span>
+            </p>
+            <button class="btn">Ver hotel</button>
         </div>
     </article>
 </section>

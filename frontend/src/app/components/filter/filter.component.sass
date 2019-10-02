@@ -1,9 +1,5 @@
 @import '../../app.component.sass'
 
-$form-linebg: #f4f4f4
-$form-stitle: #157ab1
-$form-btn: #002c77
-
 form
     background-color: $section-bg
     box-shadow: $section-fade
@@ -14,7 +10,7 @@ form
         font-weight: bold
         padding: 10px 16px
     h5
-        color: $form-stitle
+        color: $section-stitle
         font-size: 14px
         font-weight: bold
         padding: 12px 16px
@@ -26,7 +22,7 @@ form
     hr
         margin: 0
         border-top: 0
-        border-bottom: 6px solid $form-linebg
+        border-bottom: 6px solid $section-linebg
     div.form-group
         padding: 0 16px
         margin: 6px 0 16px
@@ -42,7 +38,7 @@ form
             margin-right: 10px
             height: $height-control
         button.btn
-            background-color: $form-btn
+            background-color: $section-btn
             color: #fff
             font-size: inherit
             padding: 4px 6px
@@ -55,6 +51,7 @@ form
             font-weight: bold
             label.form-check-label
                 img
+                    margin-right: 2px
                     width: 12px
                     height: 12px
                     filter: invert(0.6) sepia(4) saturate(8) hue-rotate(0)

@@ -15,4 +15,8 @@ export class DetailComponent implements OnInit {
     this.service.hotels$.subscribe(response => this.hotels = response);
     this.service.get();
   }
+
+  getStars(hotel: any) {
+    return Array(hotel.stars);
+  }
 }
