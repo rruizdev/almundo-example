@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/api-docs');
+  // to-do: Redirect to Swagger when signatures appears.
+  //res.redirect('/api-docs');
 });
 
 module.exports = router;
