@@ -10,6 +10,8 @@ export class FilterComponent implements OnInit {
   starsVisible: Boolean = true;
   inputVisible: Boolean = true;
 
+  hotel: String;
+
   constructor() { }
 
   ngOnInit() {
@@ -19,11 +21,15 @@ export class FilterComponent implements OnInit {
     this.allVisible = !this.allVisible;
   }
 
-  showHideStars(_event) {
+  showHideStars() {
     this.starsVisible = !this.starsVisible;
   }
 
-  showHideInput(_event) {
+  showHideInput() {
     this.inputVisible = !this.inputVisible;
+  }
+
+  filterBy(event: any) {
+    event.preventDefault();
   }
 }

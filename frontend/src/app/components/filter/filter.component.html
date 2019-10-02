@@ -7,8 +7,8 @@
             <span>Nombre de hotel</span>
         </h5>
         <div class="form-group" *ngIf="inputVisible">
-            <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel" />
-            <button type="submit" class="btn">Aceptar</button>
+            <input type="text" class="form-control" id="hotel" [(ngModel)]="hotel" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el nombre del hotel" />
+            <button class="btn" (click)="filterBy($event)">Aceptar</button>
         </div>
         <hr />
         <h5 (click)="showHideStars($event)">
