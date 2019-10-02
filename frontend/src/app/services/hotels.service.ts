@@ -22,7 +22,7 @@ export class HotelsService {
       });
   }
 
-  filter(name: String, stars: any[]) {
+  filter(name: string, stars: any[]) {
     if (name && name.length) {
       this.hotels.next(this.myHotels.filter(hotel => hotel.name.match(name)));
     } else {

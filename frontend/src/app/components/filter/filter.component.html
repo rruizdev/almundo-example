@@ -17,11 +17,11 @@
         </h5>
         <div class="form-group last" *ngIf="starsVisible">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox">
+                <input class="form-check-input" type="checkbox" (click)="allStars($event)">
                 <label class="form-check-label">Todas las estrellas</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="stars.five" [ngModelOptions]="{standalone: true}">
                 <label class="form-check-label">
                     <img src="../../../assets/icons/filters/star.svg" />
                     <img src="../../../assets/icons/filters/star.svg" />
@@ -31,7 +31,7 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="stars.four" [ngModelOptions]="{standalone: true}">
                 <label class="form-check-label">
                     <img src="../../../assets/icons/filters/star.svg" />
                     <img src="../../../assets/icons/filters/star.svg" />
@@ -40,7 +40,7 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="stars.three" [ngModelOptions]="{standalone: true}">
                 <label class="form-check-label">
                     <img src="../../../assets/icons/filters/star.svg" />
                     <img src="../../../assets/icons/filters/star.svg" />
@@ -48,14 +48,14 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="stars.two" [ngModelOptions]="{standalone: true}">
                 <label class="form-check-label">
                     <img src="../../../assets/icons/filters/star.svg" />
                     <img src="../../../assets/icons/filters/star.svg" />
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="stars.one" [ngModelOptions]="{standalone: true}">
                 <label class="form-check-label">
                     <img src="../../../assets/icons/filters/star.svg" />
                 </label>
