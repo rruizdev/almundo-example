@@ -36,6 +36,7 @@ export class FilterComponent implements OnInit {
     this.inputVisible = !this.inputVisible;
   }
 
+  // to-do: When is Event, the checked field isn't recognized because not appears in EventTarget.
   toggleAllStars(event: any) {
     if (this.stars.allChecked() && event.target.checked) {
       this.stars.enableAll();
@@ -47,7 +48,7 @@ export class FilterComponent implements OnInit {
     this.filterBy(undefined);
   }
 
-  filterBy(event: any) {
+  filterBy(event: Event) {
     if (event) event.preventDefault();
     this.service.filter(this.hotel, this.stars.get());
   }
