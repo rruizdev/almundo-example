@@ -1,63 +1,65 @@
 <form>
-    <h4>Filtros</h4>
-    <hr />
-    <h5>
-        <img src="../../../assets/icons/filters/search.svg" />
-        <span>Nombre de hotel</span>
-    </h5>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel" />
-        <button type="submit" class="btn">Aceptar</button>
-    </div>
-    <hr />
-    <h5>
-        <img src="../../../assets/icons/filters/star.svg" />
-        <span>Estrellas</span>
-    </h5>
-    <div class="form-group last">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">Todas las estrellas</label>
+    <h4 (click)="showHideAll($event)">Filtros</h4>
+    <div *ngIf="allVisible">
+        <hr />
+        <h5 (click)="showHideInput($event)">
+            <img src="../../../assets/icons/filters/search.svg" />
+            <span>Nombre de hotel</span>
+        </h5>
+        <div class="form-group" *ngIf="inputVisible">
+            <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel" />
+            <button type="submit" class="btn">Aceptar</button>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">
-                <img src="../../../assets/icons/filters/star.svg" />
-                <img src="../../../assets/icons/filters/star.svg" />
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">
-                <img src="../../../assets/icons/filters/star.svg" />
-            </label>
+        <hr />
+        <h5 (click)="showHideStars($event)">
+            <img src="../../../assets/icons/filters/star.svg" />
+            <span>Estrellas</span>
+        </h5>
+        <div class="form-group last" *ngIf="starsVisible">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">Todas las estrellas</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">
+                    <img src="../../../assets/icons/filters/star.svg" />
+                    <img src="../../../assets/icons/filters/star.svg" />
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">
+                    <img src="../../../assets/icons/filters/star.svg" />
+                </label>
+            </div>
         </div>
     </div>
 </form>
